@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#2C2825">
+<title>Estudio Wellness Boutique — Oportunidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─── RESET & BASE ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:      #F5F0E8;
+  --warm-white: #FAFAF7;
+  --sand:       #E8DFD0;
+  --taupe:      #C4B5A0;
+  --stone:      #8B7D6B;
+  --charcoal:   #2C2825;
+  --dark:       #1A1612;
+  --gold:       #B8A898;
+  --light-line: #DDD5C8;
+  --sage:       #9BA89A;
+
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans:  'Poppins', sans-serif;
+
+  /* spacing scale */
+  --sp-xs: 12px;
+  --sp-sm: 20px;
+  --sp-md: 32px;
+  --sp-lg: 56px;
+  --sp-xl: 80px;
+
+  /* type scale — mobile first */
+  --text-xs:   10px;
+  --text-sm:   12px;
+  --text-base: 14px;
+  --text-lg:   16px;
+  --text-xl:   20px;
+  --text-2xl:  26px;
+  --text-3xl:  34px;
+  --text-4xl:  44px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--charcoal);
+  background: var(--dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── UTILITY ───────────────────────────────────────────────────────────── */
+.serif        { font-family: var(--font-serif); }
+.serif-italic { font-family: var(--font-serif); font-style: italic; }
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.label::before { content: attr(data-n); font-family: var(--font-serif); font-style: italic; color: var(--taupe); }
+.label::after  { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+.label.light   { color: var(--taupe); }
+.label.light::after { background: rgba(184,168,152,0.4); }
+
+.gold-rule { width: 48px; height: 1px; background: var(--gold); }
+
+/* ─── FADE-UP ANIMATION ─────────────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible { opacity: 1; transform: none; }
+.fade-up:nth-child(2) { transition-delay: 0.08s; }
+.fade-up:nth-child(3) { transition-delay: 0.16s; }
+.fade-up:nth-child(4) { transition-delay: 0.24s; }
+.fade-up:nth-child(5) { transition-delay: 0.32s; }
+
+/* ─── STICKY NAV ────────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(26,22,18,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(184,168,152,0.12);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 13px; color: var(--taupe); letter-spacing: 0.02em;
+}
+.nav-cta {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--charcoal);
+  background: var(--taupe);
+  padding: 8px 16px; border-radius: 20px;
+  transition: background 0.25s;
+}
+.nav-cta:active { background: var(--gold); }
+
+/* ─── SECTIONS ──────────────────────────────────────────────────────────── */
+section { width: 100%; position: relative; overflow: hidden; }
+.inner  { padding: var(--sp-lg) 24px; max-width: 680px; margin: 0 auto; }
+
+/* ─── 1. PORTADA ────────────────────────────────────────────────────────── */
+#portada {
+  min-height: 100svh;
+  background: var(--charcoal);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: 60px;
+}
+.portada-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(74,61,48,0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(42,35,28,0.45) 0%, transparent 50%);
+}
+.portada-deco {
+  position: absolute; right: -10px; top: 50%; transform: translateY(-60%);
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(140px, 40vw, 220px);
+  color: rgba(42,35,32,0.85); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.portada-inner {
+  position: relative; z-index: 2;
+  padding: 0 24px 56px;
+  max-width: 680px; margin: 0 auto; width: 100%;
+}
+.portada-eyebrow {
+  font-size: 9px; font-weight: 300; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--taupe); margin-bottom: 20px;
+}
+.portada-title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 11vw, 54px);
+  line-height: 1.05; color: var(--cream); font-weight: 400;
+  margin-bottom: 8px;
+}
+.portada-sub {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(16px, 4.5vw, 22px);
+  color: var(--stone); margin-bottom: 18px;
+}
+.portada-rule { width: 56px; height: 1px; background: var(--gold); margin-bottom: 18px; }
+.portada-desc {
+  font-size: 13px; font-weight: 300; color: rgba(168,152,128,0.9);
+  line-height: 1.75; margin-bottom: 28px;
+}
+.portada-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.ptag {
+  font-size: 9px; font-weight: 300; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--taupe);
+  border: 1px solid rgba(184,168,152,0.35);
+  padding: 7px 15px; border-radius: 20px;
+}
+.portada-scroll {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  z-index: 2;
+}
+.portada-scroll span {
+  font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(184,168,152,0.5);
+}
+.scroll-dot {
+  width: 1px; height: 32px; background: linear-gradient(to bottom, rgba(184,168,152,0.5), transparent);
+}
+
+/* ─── 2. CONCEPTO ───────────────────────────────────────────────────────── */
+#concepto {
+  background: var(--warm-white);
+  border-left: 5px solid var(--charcoal);
+}
+#concepto::after {
+  content: '';
+  position: absolute; right: -60px; top: 40%; transform: translateY(-50%);
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, var(--cream) 0%, transparent 70%);
+  pointer-events: none;
+}
+.concepto-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 8vw, 40px);
+  color: var(--charcoal); font-weight: 400; line-height: 1.15;
+  margin-bottom: 6px;
+}
+.concepto-title em { display: block; font-style: italic; color: var(--stone); }
+.concepto-body {
+  font-size: 13.5px; font-weight: 300; color: var(--charcoal);
+  line-height: 1.85; margin-bottom: 14px;
+}
+.stats-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--light-line);
+  margin-top: 36px; padding-top: 28px;
+  gap: 0;
+}
+.stat { text-align: center; }
+.stat + .stat { border-left: 1px solid var(--light-line); }
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 6vw, 32px);
+  color: var(--charcoal); font-weight: 400; line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-lbl {
+  font-size: 9px; font-weight: 300; color: var(--stone);
+  line-height: 1.4; letter-spacing: 0.02em;
+}
+
+/* ─── 3. HIGHLIGHTS ─────────────────────────────────────────────────────── */
+#highlights { background: var(--cream); }
+.hl-header {
+  background: var(--charcoal);
+  margin: 0 -24px; padding: 36px 24px 32px;
+  margin-bottom: 28px;
+}
+.hl-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 6vw, 30px);
+  color: var(--cream); font-weight: 400; margin-top: 14px;
+}
+.hl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hl-card {
+  background: var(--warm-white);
+  padding: 20px 16px 18px;
+  border-radius: 4px; position: relative; overflow: hidden;
+}
+.hl-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+  transform: scaleX(0.35); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.hl-card:hover::before, .hl-card:active::before { transform: scaleX(1); }
+.hl-n  { font-family: var(--font-serif); font-style: italic; font-size: 10px; color: var(--taupe); margin-bottom: 6px; }
+.hl-nm { font-size: 11px; font-weight: 500; color: var(--charcoal); margin-bottom: 6px; }
+.hl-ds { font-size: 9px; font-weight: 300; color: var(--stone); line-height: 1.7; }
+
+/* ─── 4. PLANO ──────────────────────────────────────────────────────────── */
+#plano { background: var(--warm-white); border-left: 5px solid var(--charcoal); }
+.plano-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 7vw, 34px);
+  color: var(--charcoal); font-weight: 400; margin-top: 14px; margin-bottom: 6px;
+}
+.plano-sub { font-size: 12px; font-weight: 300; color: var(--stone); margin-bottom: 28px; }
+.fp-wrap {
+  background: var(--cream); border-radius: 6px;
+  padding: 20px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.fp-wrap svg { width: 100%; min-width: 320px; height: auto; display: block; }
+.fp-legend {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;
+}
+.fp-li {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 10px; font-weight: 300; color: var(--stone);
+}
+.fp-dot { width: 11px; height: 11px; border-radius: 2px; border: 1px solid rgba(139,125,107,0.3); flex-shrink: 0; }
+
+/* ─── 5. ACTIVOS ────────────────────────────────────────────────────────── */
+#activos { background: var(--charcoal); }
+.activos-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 7vw, 34px);
+  color: var(--cream); font-weight: 400; margin-top: 14px; margin-bottom: 0;
+}
+.activos-cols { display: flex; flex-direction: column; gap: 32px; margin-top: 36px; }
+.activos-col-title {
+  font-size: 9px; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--taupe);
+  border-bottom: 1px solid rgba(74,61,48,0.6);
+  padding-bottom: 10px; margin-bottom: 16px;
+}
+.activos-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin-bottom: 12px;
+}
+.a-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
+.a-text { font-size: 13px; font-weight: 300; color: var(--cream); line-height: 1.5; }
+.activos-quote {
+  border-top: 1px solid rgba(61,48,40,0.5);
+  margin-top: 44px; padding-top: 28px; text-align: center;
+}
+.activos-quote p {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 15px; color: var(--taupe); line-height: 1.6;
+}
+
+/* ─── 6. USOS ───────────────────────────────────────────────────────────── */
+#usos { background: var(--cream); }
+.usos-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 8vw, 36px);
+  color: var(--charcoal); font-weight: 400; line-height: 1.15;
+  margin-top: 14px; margin-bottom: 36px;
+}
+.usos-title em { display: block; font-style: italic; color: var(--stone); }
+.uso {
+  display: grid; grid-template-columns: 52px 1fr;
+  gap: 16px; align-items: start;
+  padding: 24px 0; border-bottom: 1px solid var(--light-line);
+}
+.uso:first-of-type { padding-top: 0; }
+.uso-n {
+  font-family: var(--font-serif);
+  font-size: 42px; color: var(--light-line);
+  font-weight: 400; line-height: 1;
+}
+.uso-title { font-size: 13px; font-weight: 500; color: var(--charcoal); margin-bottom: 5px; }
+.uso-desc  { font-size: 11.5px; font-weight: 300; color: var(--stone); line-height: 1.75; }
+.uso-tags  { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.uso-tag {
+  font-size: 10px; font-weight: 300; letter-spacing: 0.06em;
+  background: var(--sand); color: var(--charcoal);
+  padding: 6px 14px; border-radius: 20px;
+}
+
+/* ─── 7. VENTAJA ────────────────────────────────────────────────────────── */
+#ventaja { background: var(--warm-white); }
+.ventaja-dark {
+  background: var(--charcoal);
+  margin: 0 -24px; padding: 44px 24px 40px;
+  margin-bottom: 0;
+}
+.ventaja-dark-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 8vw, 38px);
+  color: var(--cream); font-weight: 400; line-height: 1.2;
+  margin-top: 16px; margin-bottom: 16px;
+}
+.ventaja-dark-body {
+  font-size: 13px; font-weight: 300; color: rgba(138,125,110,0.9);
+  line-height: 1.8; margin-bottom: 32px;
+}
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.metric { padding: 20px 0; }
+.metric + .metric { border-left: 1px solid rgba(61,48,40,0.5); padding-left: 20px; }
+.metric-num {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 9vw, 46px);
+  color: var(--cream); font-weight: 400; line-height: 1;
+}
+.metric-lbl {
+  font-size: 9.5px; font-weight: 300; color: var(--taupe);
+  margin-top: 5px; line-height: 1.5;
+}
+.elim-list { padding: var(--sp-md) 24px var(--sp-lg); max-width: 680px; margin: 0 auto; }
+.elim-title-main {
+  font-family: var(--font-serif);
+  font-size: 18px; color: var(--charcoal);
+  font-weight: 400; margin-bottom: 24px; margin-top: 4px;
+}
+.elim {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: 14px; align-items: start;
+  padding: 16px 0; border-bottom: 1px solid var(--light-line);
+}
+.elim-check {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--sage);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: white; font-weight: 500; flex-shrink: 0;
+}
+.elim-name { font-size: 12px; font-weight: 500; color: var(--charcoal); margin-bottom: 3px; }
+.elim-desc { font-size: 10.5px; font-weight: 300; color: var(--stone); line-height: 1.6; }
+
+/* ─── 8. TRANSFERENCIA ──────────────────────────────────────────────────── */
+#transferencia { background: var(--cream); }
+.transf-header {
+  background: var(--charcoal);
+  margin: 0 -24px; padding: 36px 24px 32px;
+  margin-bottom: 28px;
+}
+.transf-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 5.5vw, 28px);
+  color: var(--cream); font-weight: 400; margin-top: 14px;
+}
+.transf-intro { font-size: 13px; font-weight: 300; color: var(--stone); line-height: 1.8; margin-bottom: 28px; }
+.transf-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+.transf-card {
+  background: var(--warm-white); padding: 24px 20px;
+  border-radius: 4px; position: relative;
+  border-top: 3px solid var(--gold);
+}
+.transf-opt  { font-family: var(--font-serif); font-style: italic; font-size: 12px; color: var(--taupe); margin-bottom: 6px; }
+.transf-name { font-size: 13px; font-weight: 500; color: var(--charcoal); margin-bottom: 10px; }
+.transf-desc { font-size: 11.5px; font-weight: 300; color: var(--stone); line-height: 1.75; }
+.transf-note {
+  background: var(--sand); padding: 20px 20px; border-radius: 4px; margin-bottom: 16px;
+}
+.transf-note-head {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 12px; color: var(--stone); margin-bottom: 8px;
+}
+.transf-note-body { font-size: 11px; font-weight: 300; color: var(--charcoal); line-height: 1.7; }
+.transf-conf { font-size: 10px; font-weight: 300; color: var(--stone); text-align: center; letter-spacing: 0.06em; }
+
+/* ─── 9. GALERÍA ────────────────────────────────────────────────────────── */
+#galeria { background: var(--charcoal); }
+.galeria-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 6.5vw, 32px);
+  color: var(--cream); font-weight: 400; margin-top: 14px; margin-bottom: 28px;
+}
+.gal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.gal-item {
+  background: rgba(46,38,32,0.9); border-radius: 4px;
+  aspect-ratio: 4/3; display: flex; align-items: flex-end; padding: 14px;
+  position: relative; overflow: hidden;
+}
+.gal-item.wide { grid-column: span 2; aspect-ratio: 16/7; }
+.gal-item::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+}
+.gal-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 65% 35%, rgba(74,61,48,0.5) 0%, transparent 65%);
+}
+.gal-lbl { position: relative; z-index: 2; }
+.gal-lbl strong {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 12px; color: var(--cream); display: block;
+}
+.gal-lbl span { font-size: 9px; font-weight: 300; color: var(--taupe); }
+.gal-note { font-size: 10px; font-weight: 300; color: rgba(90,78,66,0.7); text-align: center; margin-top: 20px; }
+
+/* ─── 10. CIERRE + CTA ──────────────────────────────────────────────────── */
+#cierre { background: var(--warm-white); }
+#cierre::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, var(--cream) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cierre-inner {
+  position: relative; z-index: 2;
+  padding: var(--sp-xl) 24px;
+  text-align: center; max-width: 480px; margin: 0 auto;
+}
+.cierre-eye  { font-family: var(--font-serif); font-size: 13px; color: var(--taupe); margin-bottom: 18px; }
+.cierre-rule { width: 48px; height: 1px; background: var(--gold); margin: 0 auto 22px; }
+.cierre-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 7.5vw, 36px);
+  color: var(--charcoal); font-weight: 400; line-height: 1.2; margin-bottom: 6px;
+}
+.cierre-title em { display: block; font-style: italic; color: var(--stone); }
+.cierre-sub {
+  font-size: 12.5px; font-weight: 300; color: var(--stone);
+  line-height: 1.8; margin: 20px 0 36px;
+}
+
+/* WhatsApp CTA button */
+.wa-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: #25D366; color: white;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  padding: 16px 28px; border-radius: 50px;
+  margin: 0 auto 14px; max-width: 280px;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.wa-btn:active { transform: scale(0.97); box-shadow: 0 4px 12px rgba(37,211,102,0.2); }
+.wa-icon { width: 20px; height: 20px; flex-shrink: 0; }
+
+.alt-cta {
+  display: block;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--stone);
+  margin-top: 10px;
+}
+
+.cierre-brand {
+  border-top: 1px solid var(--gold); padding-top: 28px; margin-top: 48px;
+}
+.cierre-brand-name {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 13px; color: var(--stone); margin-bottom: 4px;
+}
+.cierre-brand small { font-size: 9px; font-weight: 300; color: var(--taupe); letter-spacing: 0.1em; }
+
+/* ─── RESPONSIVE — tablet & up ──────────────────────────────────────────── */
+@media (min-width: 600px) {
+  :root {
+    --sp-lg: 72px;
+    --sp-xl: 100px;
+  }
+  .hl-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .activos-cols { flex-direction: row; gap: 0; }
+  .activos-col { flex: 1; padding: 0 28px; border-right: 1px solid rgba(61,48,40,0.5); }
+  .activos-col:first-child { padding-left: 0; }
+  .activos-col:last-child  { border-right: none; padding-right: 0; }
+  .transf-cards { flex-direction: row; }
+  .transf-card { flex: 1; }
+  .gal-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .gal-item.wide { grid-column: span 3; }
+}
+
+@media (min-width: 900px) {
+  .inner { padding: var(--sp-xl) 40px; }
+  .portada-inner { padding: 0 40px 80px; }
+  .hl-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <span class="nav-brand">Estudio Wellness Boutique</span>
+  <a href="https://wa.me/5491164745661?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20transferencia%20del%20estudio%20wellness."
+     class="nav-cta">Consultar</a>
+</nav>
+
+<!-- ── 1. PORTADA ──────────────────────────────────────────────────────── -->
+<section id="portada">
+  <div class="portada-bg"></div>
+  <div class="portada-deco">W</div>
+  <div class="portada-inner">
+    <p class="portada-eyebrow">Oportunidad de Inversión</p>
+    <h1 class="portada-title">Estudio<br>Wellness<br>Boutique</h1>
+    <p class="portada-sub">Listo para operar.</p>
+    <div class="portada-rule"></div>
+    <p class="portada-desc">Espacio completamente equipado y diseñado.<br>Capacidad operativa inmediata.</p>
+    <div class="portada-tags">
+      <span class="ptag">Llave en mano</span>
+      <span class="ptag">Ubicación premium</span>
+      <span class="ptag">Multidisciplinario</span>
+    </div>
+  </div>
+  <div class="portada-scroll">
+    <span>scroll</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ── 2. CONCEPTO ─────────────────────────────────────────────────────── -->
+<section id="concepto">
+  <div class="inner">
+    <div class="label fade-up" data-n="01">La Oportunidad</div>
+    <h2 class="concepto-title fade-up">Un espacio diseñado<em>para inspirar.</em></h2>
+    <div class="gold-rule" style="margin: 20px 0 24px;"></div>
+    <p class="concepto-body fade-up">Una oportunidad excepcional para adquirir un espacio boutique de bienestar completamente construido y equipado. Cada detalle fue cuidadosamente considerado — desde la distribución y la acústica hasta los materiales y la iluminación.</p>
+    <p class="concepto-body fade-up">Ya sea que continúes con el concepto wellness establecido o traigas tu propia visión, este espacio elimina la complejidad de comenzar desde cero. Lo único que falta eres tú.</p>
+    <div class="stats-row fade-up">
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-lbl">Salones de<br>movimiento</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-lbl">Gabinete<br>privado</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Ya</div>
+        <div class="stat-lbl">Operativo<br>inmediato</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. HIGHLIGHTS ───────────────────────────────────────────────────── -->
+<section id="highlights">
+  <div class="inner" style="padding-top:0; padding-bottom: var(--sp-lg);">
+    <div class="hl-header">
+      <div class="label light" data-n="02">Puntos Destacados</div>
+      <h2 class="hl-header-title">Lo que este espacio ofrece.</h2>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card fade-up"><div class="hl-n">01.</div><div class="hl-nm">Llave en mano</div><div class="hl-ds">Sin obra ni imprevistos. Operativo desde el primer día.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">02.</div><div class="hl-nm">Diseño boutique</div><div class="hl-ds">Materiales premium, espejos, acústica y luminación curada.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">03.</div><div class="hl-nm">Multidisciplinario</div><div class="hl-ds">Clases, sesiones privadas y tratamientos en el mismo espacio.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">04.</div><div class="hl-nm">Equipamiento incluido</div><div class="hl-ds">Colchonetas, sonido, camilla y mobiliario incluidos.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">05.</div><div class="hl-nm">Atmósfera premium</div><div class="hl-ds">Coherencia estética en todo el espacio — high-end sin esfuerzo.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">06.</div><div class="hl-nm">Ventaja estratégica</div><div class="hl-ds">Entrá al mercado meses antes que cualquier proyecto desde cero.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. PLANO ────────────────────────────────────────────────────────── -->
+<section id="plano">
+  <div class="inner">
+    <div class="label fade-up" data-n="03">Distribución</div>
+    <h2 class="plano-title fade-up">Planta Subsuelo</h2>
+    <p class="plano-sub fade-up">Diseño funcional con circulación fluida y espacios diferenciados.</p>
+    <div class="fp-wrap fade-up">
+      <svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg">
+        <!-- Building envelope -->
+        <polygon points="36,16 706,16 706,278 16,278" fill="#EDE8DF" stroke="#2C2825" stroke-width="1.2"/>
+
+        <!-- Sala de Pilates — far left -->
+        <rect x="16" y="16" width="178" height="262" fill="#D4C5B0" stroke="#2C2825" stroke-width="0.8"/>
+        <text x="105" y="147" text-anchor="middle" font-size="10.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Sala de Pilates</text>
+        <text x="105" y="162" text-anchor="middle" font-size="8" fill="#8B7D6B" font-family="sans-serif">Salón de movimiento</text>
+
+        <!-- Recepción -->
+        <rect x="194" y="16" width="118" height="104" fill="#DDD0BE" stroke="#2C2825" stroke-width="0.7"/>
+        <text x="253" y="65" text-anchor="middle" font-size="10" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Recepción</text>
+        <text x="253" y="79" text-anchor="middle" font-size="7.5" fill="#8B7D6B" font-family="sans-serif">Área de ingreso</text>
+
+        <!-- Circulación central -->
+        <rect x="194" y="120" width="278" height="76" fill="#E2DBD0" stroke="#2C2825" stroke-width="0.6"/>
+        <text x="333" y="162" text-anchor="middle" font-size="9" font-style="italic" fill="#8B7D6B" font-family="Lora,Georgia,serif">Circulación</text>
+
+        <!-- Sala de espera -->
+        <rect x="194" y="196" width="118" height="82" fill="#E0D8CC" stroke="#2C2825" stroke-width="0.7"/>
+        <text x="253" y="241" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Sala de espera</text>
+
+        <!-- Masajes -->
+        <rect x="312" y="16" width="96" height="104" fill="#CBBFB0" stroke="#2C2825" stroke-width="0.7"/>
+        <text x="360" y="65" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Masajes</text>
+        <text x="360" y="79" text-anchor="middle" font-size="7.5" fill="#8B7D6B" font-family="sans-serif">Gabinete</text>
+
+        <!-- Terapias -->
+        <rect x="312" y="196" width="96" height="82" fill="#C8BFAF" stroke="#2C2825" stroke-width="0.7"/>
+        <text x="360" y="240" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Terapias</text>
+        <text x="360" y="254" text-anchor="middle" font-size="7.5" fill="#8B7D6B" font-family="sans-serif">Gabinete</text>
+
+        <!-- Sala de Yoga — right large -->
+        <rect x="472" y="16" width="234" height="192" fill="#D4C5B0" stroke="#2C2825" stroke-width="0.8"/>
+        <text x="589" y="110" text-anchor="middle" font-size="10.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Sala de Yoga</text>
+        <text x="589" y="125" text-anchor="middle" font-size="8" fill="#8B7D6B" font-family="sans-serif">Salón de movimiento</text>
+
+        <!-- Baño accesible -->
+        <rect x="472" y="208" width="116" height="70" fill="#E5DFDA" stroke="#2C2825" stroke-width="0.6"/>
+        <text x="530" y="247" text-anchor="middle" font-size="8.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Baño</text>
+        <text x="530" y="261" text-anchor="middle" font-size="7" fill="#8B7D6B" font-family="sans-serif">Accesible</text>
+
+        <!-- Baño 2 -->
+        <rect x="590" y="208" width="116" height="70" fill="#E5DFDA" stroke="#2C2825" stroke-width="0.6"/>
+        <text x="648" y="247" text-anchor="middle" font-size="8.5" font-style="italic" fill="#2C2825" font-family="Lora,Georgia,serif">Baño</text>
+
+        <!-- Entry arrow -->
+        <line x1="253" y1="8" x2="253" y2="16" stroke="#B8A898" stroke-width="1.5"/>
+        <text x="253" y="6" text-anchor="middle" font-size="7" fill="#8B7D6B" font-family="sans-serif">↓ Acceso</text>
+
+        <!-- N indicator -->
+        <text x="694" y="28" text-anchor="middle" font-size="8" fill="#C4B5A0" font-family="Lora,Georgia,serif">N↑</text>
+      </svg>
+    </div>
+    <div class="fp-legend fade-up">
+      <div class="fp-li"><div class="fp-dot" style="background:#D4C5B0;"></div>Salones de movimiento</div>
+      <div class="fp-li"><div class="fp-dot" style="background:#DDD0BE;"></div>Recepción / Espera</div>
+      <div class="fp-li"><div class="fp-dot" style="background:#CBBFB0;"></div>Gabinetes privados</div>
+      <div class="fp-li"><div class="fp-dot" style="background:#E5DFDA;"></div>Sanitarios</div>
+      <div class="fp-li"><div class="fp-dot" style="background:#E2DBD0;"></div>Circulación</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. ACTIVOS ──────────────────────────────────────────────────────── -->
+<section id="activos">
+  <div class="inner">
+    <div class="label light fade-up" data-n="04">Activos Incluidos</div>
+    <h2 class="activos-header-title fade-up">Todo está incluido.</h2>
+    <div class="activos-cols fade-up">
+      <div class="activos-col">
+        <div class="activos-col-title">Infraestructura</div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Aire acondicionado</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Iluminación LED profesional</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Espejos de pared completa</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Pisos premium</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Cortinas de privacidad</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Diseño acústico</div></div>
+      </div>
+      <div class="activos-col">
+        <div class="activos-col-title">Equipamiento</div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Colchonetas profesionales</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Props y accesorios</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Camilla de masajes</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Sistema de sonido</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Accesorios de pilates</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Barra fija</div></div>
+      </div>
+      <div class="activos-col">
+        <div class="activos-col-title">Mobiliario & Diseño</div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Escritorio de recepción</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Sala de espera equipada</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Soluciones de almacenaje</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Elementos de decoración</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Señalética</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Obra artística curada</div></div>
+      </div>
+    </div>
+    <div class="activos-quote fade-up">
+      <p>"El espacio está completo. El concepto es tuyo."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. USOS ─────────────────────────────────────────────────────────── -->
+<section id="usos">
+  <div class="inner">
+    <div class="label fade-up" data-n="05">Usos Potenciales</div>
+    <h2 class="usos-title fade-up">Hacé este espacio<em>completamente tuyo.</em></h2>
+    <div class="uso fade-up">
+      <div class="uso-n">01</div>
+      <div><div class="uso-title">Estudio de Yoga</div><div class="uso-desc">Los salones están diseñados acústica y espacialmente para clases grupales e instrucción privada, desde Hatha hasta Vinyasa.</div></div>
+    </div>
+    <div class="uso fade-up">
+      <div class="uso-n">02</div>
+      <div><div class="uso-title">Pilates & Barre</div><div class="uso-desc">El layout es ideal para sesiones de reformer, clases de barre y movimiento funcional — individual o en grupos reducidos.</div></div>
+    </div>
+    <div class="uso fade-up">
+      <div class="uso-n">03</div>
+      <div><div class="uso-title">Terapias Corporales</div><div class="uso-desc">El gabinete privado es perfecto para masajes, osteopatía, trabajo energético o consultas en un entorno sereno.</div></div>
+    </div>
+    <div class="uso fade-up">
+      <div class="uso-n">04</div>
+      <div><div class="uso-title">Wellness Club Híbrido</div><div class="uso-desc">Combiná múltiples disciplinas bajo una sola marca. El espacio soporta una oferta wellness boutique completa.</div></div>
+    </div>
+    <div class="uso-tags fade-up">
+      <span class="uso-tag">Yoga</span>
+      <span class="uso-tag">Pilates</span>
+      <span class="uso-tag">Barre</span>
+      <span class="uso-tag">Masajes</span>
+      <span class="uso-tag">Entrenamiento Personal</span>
+      <span class="uso-tag">Meditación</span>
+      <span class="uso-tag">Wellness Corporativo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. VENTAJA ──────────────────────────────────────────────────────── -->
+<section id="ventaja">
+  <div class="ventaja-dark">
+    <div style="max-width:680px; margin:0 auto; padding:0 0;">
+      <div class="label light fade-up" data-n="06">La Ventaja</div>
+      <h2 class="ventaja-dark-title fade-up">Saltate lo difícil.</h2>
+      <p class="ventaja-dark-body fade-up">Construir un espacio wellness desde cero requiere tiempo, capital y una coordinación enorme. Este espacio elimina todo eso.</p>
+      <div class="metrics fade-up">
+        <div class="metric">
+          <div class="metric-num">6–12</div>
+          <div class="metric-lbl">meses ahorrados vs.<br>construcción desde cero</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">100%</div>
+          <div class="metric-lbl">de decisiones de diseño<br>ya tomadas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="elim-list">
+    <h3 class="elim-title-main">Este espacio elimina la necesidad de:</h3>
+    <div class="elim fade-up"><div class="elim-check">✓</div><div><div class="elim-name">Obra y construcción</div><div class="elim-desc">Sin demolición, sin albañilería, sin contratistas.</div></div></div>
+    <div class="elim fade-up"><div class="elim-check">✓</div><div><div class="elim-name">Búsqueda de equipamiento</div><div class="elim-desc">Sin investigación, compras ni demoras de entrega.</div></div></div>
+    <div class="elim fade-up"><div class="elim-check">✓</div><div><div class="elim-name">Diseño de interiores</div><div class="elim-desc">Todas las decisiones estéticas ya están tomadas.</div></div></div>
+    <div class="elim fade-up"><div class="elim-check">✓</div><div><div class="elim-name">Instalación y montaje</div><div class="elim-desc">Sonido, iluminación y artefactos listos para usar.</div></div></div>
+    <div class="elim fade-up"><div class="elim-check">✓</div><div><div class="elim-name">Demoras operativas</div><div class="elim-desc">Abierto al público desde el primer día.</div></div></div>
+    <div class="elim fade-up"><div class="elim-check">✓</div><div><div class="elim-name">Construcción de marca</div><div class="elim-desc">La atmósfera premium ya está establecida.</div></div></div>
+  </div>
+</section>
+
+<!-- ── 8. TRANSFERENCIA ────────────────────────────────────────────────── -->
+<section id="transferencia">
+  <div class="inner" style="padding-top:0; padding-bottom:var(--sp-lg);">
+    <div class="transf-header">
+      <div class="label light fade-up" data-n="07">Transferencia</div>
+      <h2 class="transf-header-title fade-up">Flexible. Claro. Profesional.</h2>
+    </div>
+    <p class="transf-intro fade-up">La transferencia está diseñada para ser simple, fluida y adaptable a las necesidades del comprador.</p>
+    <div class="transf-cards">
+      <div class="transf-card fade-up">
+        <div class="transf-opt">Opción 1</div>
+        <div class="transf-name">Espacio + Activos</div>
+        <div class="transf-desc">La transferencia física incluye el setup completo: equipamiento, mobiliario, artefactos e infraestructura. Capacidad operativa inmediata.</div>
+      </div>
+      <div class="transf-card fade-up">
+        <div class="transf-opt">Opción 2</div>
+        <div class="transf-name">Espacio + Marca</div>
+        <div class="transf-desc">Inclusión opcional de identidad visual, activos digitales y fundamentos de marca — entrada al mercado completamente posicionada.</div>
+      </div>
+      <div class="transf-card fade-up">
+        <div class="transf-opt">Opción 3</div>
+        <div class="transf-name">Transición Asistida</div>
+        <div class="transf-desc">Período de traspaso estructurado, con orientación operativa e introducción a proveedores y prestadores de servicios.</div>
+      </div>
+    </div>
+    <div class="transf-note fade-up">
+      <div class="transf-note-head">Todas las estructuras se discuten directamente con los interesados.</div>
+      <div class="transf-note-body">Los términos son abiertos a negociación. El precio se presenta ante consulta calificada.</div>
+    </div>
+    <p class="transf-conf fade-up">Confidencial · Solo para consultas calificadas</p>
+  </div>
+</section>
+
+<!-- ── 9. GALERÍA ──────────────────────────────────────────────────────── -->
+<section id="galeria">
+  <div class="inner">
+    <div class="label light fade-up" data-n="08">Atmósfera</div>
+    <h2 class="galeria-header-title fade-up">El espacio, en su propia luz.</h2>
+    <div class="gal-grid fade-up">
+      <div class="gal-item wide"><div class="gal-lbl"><strong>Vista general</strong><span>Espacio completo</span></div></div>
+      <div class="gal-item"><div class="gal-lbl"><strong>Sala de Pilates</strong><span>Movimiento</span></div></div>
+      <div class="gal-item"><div class="gal-lbl"><strong>Sala de Yoga</strong><span>Movimiento</span></div></div>
+      <div class="gal-item"><div class="gal-lbl"><strong>Recepción</strong><span>Bienvenida</span></div></div>
+      <div class="gal-item"><div class="gal-lbl"><strong>Gabinete</strong><span>Privado</span></div></div>
+      <div class="gal-item"><div class="gal-lbl"><strong>Detalles</strong><span>Textura y luz</span></div></div>
+    </div>
+    <p class="gal-note fade-up">Fotografía profesional disponible a solicitud.</p>
+  </div>
+</section>
+
+<!-- ── 10. CIERRE & CTA ────────────────────────────────────────────────── -->
+<section id="cierre">
+  <div class="cierre-inner fade-up">
+    <p class="cierre-eye">Una Oportunidad Única</p>
+    <div class="cierre-rule"></div>
+    <h2 class="cierre-title">Ingresá al mercado wellness<em>con todo listo.</em></h2>
+    <p class="cierre-sub">Un espacio boutique de bienestar disponible para transferencia inmediata. Diseñado con intención. Listo para ser tuyo.</p>
+
+    <!-- WhatsApp button -->
+    <a href="https://wa.me/5491164745661?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20transferencia%20del%20estudio%20wellness."
+       class="wa-btn" target="_blank" rel="noopener">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.523 5.845L.057 23.882l6.233-1.434A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.044-1.394l-.361-.214-3.742.981.998-3.65-.235-.374A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      Consultar por WhatsApp
+    </a>
+
+    <span class="alt-cta">Respuesta confidencial en menos de 24h</span>
+
+    <div class="cierre-brand">
+      <p class="cierre-brand-name">Estudio Wellness Boutique</p>
+      <small>Confidencial · Solo consultas calificadas</small>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer — fade-up on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Trigger portada elements immediately
+  document.querySelectorAll('#portada .fade-up').forEach(el => el.classList.add('visible'));
+</script>
+
+</body>
+</html>
