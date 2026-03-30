@@ -36,14 +36,14 @@
   --sp-xl: 80px;
 
   /* type scale — mobile first */
-  --text-xs:   10px;
-  --text-sm:   12px;
-  --text-base: 14px;
-  --text-lg:   16px;
-  --text-xl:   20px;
-  --text-2xl:  26px;
-  --text-3xl:  34px;
-  --text-4xl:  44px;
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   22px;
+  --text-2xl:  28px;
+  --text-3xl:  36px;
+  --text-4xl:  46px;
 }
 
 html { scroll-behavior: smooth; }
@@ -146,7 +146,7 @@ section { width: 100%; position: relative; overflow: hidden; }
   max-width: 680px; margin: 0 auto; width: 100%;
 }
 .portada-eyebrow {
-  font-size: 9px; font-weight: 300; letter-spacing: 0.32em;
+  font-size: 11px; font-weight: 300; letter-spacing: 0.32em;
   text-transform: uppercase; color: var(--taupe); margin-bottom: 20px;
 }
 .portada-title {
@@ -162,7 +162,7 @@ section { width: 100%; position: relative; overflow: hidden; }
 }
 .portada-rule { width: 56px; height: 1px; background: var(--gold); margin-bottom: 18px; }
 .portada-desc {
-  font-size: 13px; font-weight: 300; color: rgba(168,152,128,0.9);
+  font-size: 15px; font-weight: 300; color: rgba(168,152,128,0.9);
   line-height: 1.75; margin-bottom: 28px;
 }
 .portada-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -205,7 +205,7 @@ section { width: 100%; position: relative; overflow: hidden; }
 }
 .concepto-title em { display: block; font-style: italic; color: var(--stone); }
 .concepto-body {
-  font-size: 13.5px; font-weight: 300; color: var(--charcoal);
+  font-size: 15px; font-weight: 300; color: var(--charcoal);
   line-height: 1.85; margin-bottom: 14px;
 }
 .stats-row {
@@ -252,9 +252,9 @@ section { width: 100%; position: relative; overflow: hidden; }
   transition: transform 0.4s ease;
 }
 .hl-card:hover::before, .hl-card:active::before { transform: scaleX(1); }
-.hl-n  { font-family: var(--font-serif); font-style: italic; font-size: 10px; color: var(--taupe); margin-bottom: 6px; }
-.hl-nm { font-size: 11px; font-weight: 500; color: var(--charcoal); margin-bottom: 6px; }
-.hl-ds { font-size: 9px; font-weight: 300; color: var(--stone); line-height: 1.7; }
+.hl-n  { font-family: var(--font-serif); font-style: italic; font-size: 12px; color: var(--taupe); margin-bottom: 6px; }
+.hl-nm { font-size: 13px; font-weight: 500; color: var(--charcoal); margin-bottom: 6px; }
+.hl-ds { font-size: 11px; font-weight: 300; color: var(--stone); line-height: 1.7; }
 
 /* ─── 4. PLANO ──────────────────────────────────────────────────────────── */
 #plano { background: var(--warm-white); border-left: 5px solid var(--charcoal); }
@@ -297,7 +297,7 @@ section { width: 100%; position: relative; overflow: hidden; }
   margin-bottom: 12px;
 }
 .a-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
-.a-text { font-size: 13px; font-weight: 300; color: var(--cream); line-height: 1.5; }
+.a-text { font-size: 15px; font-weight: 300; color: var(--cream); line-height: 1.5; }
 .activos-quote {
   border-top: 1px solid rgba(61,48,40,0.5);
   margin-top: 44px; padding-top: 28px; text-align: center;
@@ -327,8 +327,8 @@ section { width: 100%; position: relative; overflow: hidden; }
   font-size: 42px; color: var(--light-line);
   font-weight: 400; line-height: 1;
 }
-.uso-title { font-size: 13px; font-weight: 500; color: var(--charcoal); margin-bottom: 5px; }
-.uso-desc  { font-size: 11.5px; font-weight: 300; color: var(--stone); line-height: 1.75; }
+.uso-title { font-size: 15px; font-weight: 500; color: var(--charcoal); margin-bottom: 5px; }
+.uso-desc  { font-size: 13px; font-weight: 300; color: var(--stone); line-height: 1.75; }
 .uso-tags  { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
 .uso-tag {
   font-size: 10px; font-weight: 300; letter-spacing: 0.06em;
@@ -382,8 +382,8 @@ section { width: 100%; position: relative; overflow: hidden; }
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; color: white; font-weight: 500; flex-shrink: 0;
 }
-.elim-name { font-size: 12px; font-weight: 500; color: var(--charcoal); margin-bottom: 3px; }
-.elim-desc { font-size: 10.5px; font-weight: 300; color: var(--stone); line-height: 1.6; }
+.elim-name { font-size: 14px; font-weight: 500; color: var(--charcoal); margin-bottom: 3px; }
+.elim-desc { font-size: 12px; font-weight: 300; color: var(--stone); line-height: 1.6; }
 
 /* ─── 8. TRANSFERENCIA ──────────────────────────────────────────────────── */
 #transferencia { background: var(--cream); }
@@ -397,16 +397,16 @@ section { width: 100%; position: relative; overflow: hidden; }
   font-size: clamp(20px, 5.5vw, 28px);
   color: var(--cream); font-weight: 400; margin-top: 14px;
 }
-.transf-intro { font-size: 13px; font-weight: 300; color: var(--stone); line-height: 1.8; margin-bottom: 28px; }
+.transf-intro { font-size: 15px; font-weight: 300; color: var(--stone); line-height: 1.8; margin-bottom: 28px; }
 .transf-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
 .transf-card {
   background: var(--warm-white); padding: 24px 20px;
   border-radius: 4px; position: relative;
   border-top: 3px solid var(--gold);
 }
-.transf-opt  { font-family: var(--font-serif); font-style: italic; font-size: 12px; color: var(--taupe); margin-bottom: 6px; }
-.transf-name { font-size: 13px; font-weight: 500; color: var(--charcoal); margin-bottom: 10px; }
-.transf-desc { font-size: 11.5px; font-weight: 300; color: var(--stone); line-height: 1.75; }
+.transf-opt  { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: var(--taupe); margin-bottom: 6px; }
+.transf-name { font-size: 15px; font-weight: 500; color: var(--charcoal); margin-bottom: 10px; }
+.transf-desc { font-size: 13px; font-weight: 300; color: var(--stone); line-height: 1.75; }
 .transf-note {
   background: var(--sand); padding: 20px 20px; border-radius: 4px; margin-bottom: 16px;
 }
@@ -475,7 +475,7 @@ section { width: 100%; position: relative; overflow: hidden; }
 }
 .cierre-title em { display: block; font-style: italic; color: var(--stone); }
 .cierre-sub {
-  font-size: 12.5px; font-weight: 300; color: var(--stone);
+  font-size: 15px; font-weight: 300; color: var(--stone);
   line-height: 1.8; margin: 20px 0 36px;
 }
 
@@ -537,7 +537,7 @@ section { width: 100%; position: relative; overflow: hidden; }
 <!-- NAV -->
 <nav class="nav">
   <span class="nav-brand">Estudio Wellness Boutique</span>
-  <a href="https://wa.me/5491164745661?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20transferencia%20del%20estudio%20wellness."
+  <a href="https://wa.me/5491164745661?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20oportunidad%20del%20studio%20wellness."
      class="nav-cta">Consultar</a>
 </nav>
 
@@ -602,6 +602,8 @@ section { width: 100%; position: relative; overflow: hidden; }
       <div class="hl-card fade-up"><div class="hl-n">04.</div><div class="hl-nm">Equipamiento incluido</div><div class="hl-ds">Colchonetas, sonido, camilla y mobiliario incluidos.</div></div>
       <div class="hl-card fade-up"><div class="hl-n">05.</div><div class="hl-nm">Atmósfera premium</div><div class="hl-ds">Coherencia estética en todo el espacio — high-end sin esfuerzo.</div></div>
       <div class="hl-card fade-up"><div class="hl-n">06.</div><div class="hl-nm">Ventaja estratégica</div><div class="hl-ds">Entrá al mercado meses antes que cualquier proyecto desde cero.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">07.</div><div class="hl-nm">Patio & jardín de invierno</div><div class="hl-ds">Espacio exterior propio y jardín de invierno que aporta luz natural al ambiente.</div></div>
+      <div class="hl-card fade-up"><div class="hl-n">08.</div><div class="hl-nm">Hot Yoga / Hot Pilates</div><div class="hl-ds">Salón equipado con tecnología de calor infrarrojo para clases de hot yoga y hot pilates.</div></div>
     </div>
   </div>
 </section>
@@ -691,6 +693,10 @@ section { width: 100%; position: relative; overflow: hidden; }
         <div class="activos-item"><div class="a-dot"></div><div class="a-text">Pisos premium</div></div>
         <div class="activos-item"><div class="a-dot"></div><div class="a-text">Cortinas de privacidad</div></div>
         <div class="activos-item"><div class="a-dot"></div><div class="a-text">Diseño acústico</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Instalación de internet</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Equipos de calor infrarrojo</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Patio exterior privado</div></div>
+        <div class="activos-item"><div class="a-dot"></div><div class="a-text">Jardín de invierno</div></div>
       </div>
       <div class="activos-col">
         <div class="activos-col-title">Equipamiento</div>
@@ -738,10 +744,16 @@ section { width: 100%; position: relative; overflow: hidden; }
       <div class="uso-n">04</div>
       <div><div class="uso-title">Wellness Club Híbrido</div><div class="uso-desc">Combiná múltiples disciplinas bajo una sola marca. El espacio soporta una oferta wellness boutique completa.</div></div>
     </div>
+    <div class="uso fade-up">
+      <div class="uso-n">05</div>
+      <div><div class="uso-title">Hot Yoga / Hot Pilates</div><div class="uso-desc">El salón cuenta con equipos de calor infrarrojo instalados, listo para clases de hot yoga o hot pilates sin inversión adicional.</div></div>
+    </div>
     <div class="uso-tags fade-up">
       <span class="uso-tag">Yoga</span>
       <span class="uso-tag">Pilates</span>
       <span class="uso-tag">Barre</span>
+      <span class="uso-tag">Hot Yoga</span>
+      <span class="uso-tag">Hot Pilates</span>
       <span class="uso-tag">Masajes</span>
       <span class="uso-tag">Entrenamiento Personal</span>
       <span class="uso-tag">Meditación</span>
@@ -839,7 +851,7 @@ section { width: 100%; position: relative; overflow: hidden; }
     <p class="cierre-sub">Un espacio boutique de bienestar disponible para transferencia inmediata. Diseñado con intención. Listo para ser tuyo.</p>
 
     <!-- WhatsApp button -->
-    <a href="https://wa.me/5491164745661?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20transferencia%20del%20estudio%20wellness."
+    <a href="https://wa.me/5491164745661?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20oportunidad%20del%20studio%20wellness."
        class="wa-btn" target="_blank" rel="noopener">
       <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
